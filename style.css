@@ -265,14 +265,14 @@ nav.show ul.grid {
   color: var(--body-color);
   font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  transition: transform 0.2s ease-in-out, color 0.2s ease;
 }
 /* Transformação ao clicar no ícone de hambúrguer */
 .icon-menu:active {
-  transform: scale(1.1) translateX(5px);
+  transform: scale(1.2) rotate(45deg);
   opacity: 0.7;
   color: var(--newbase-yellow);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease-in-out, color 0.2s ease;
 }
 
 .toggle:hover {
@@ -287,7 +287,7 @@ nav .icon-close {
   right: 1.5rem;
   cursor: pointer;
   transform: rotate(15deg) scale(1.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 nav.show div.icon-close {
