@@ -44,8 +44,8 @@ img {
   --newbase-Blue-second: #6d9cbc;
   --newbase-blue-second:#79e0f7;
   --newbase-pink-second: #f489af;
-  --newbase-orange-second:  #ff8400;
-  --newbase-yellow-second:#edc032;
+  --newbase-orange-second:  #f7c28d;
+  --newbase-yellow-second:#f9df95;
 
 
   /* fonts */
@@ -87,7 +87,7 @@ body {
 }
 
 .button:hover {
-  background: var(--newbase-yellow-second);
+  background: var(--newbase-yellow);
 }
 
 .divider-1 {
@@ -106,6 +106,35 @@ body {
     hsla(var(--hue2), 90%, 88%, 0.34),
     hsla(var(--hue2), 36%, 57%, 1)
   );
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* Cor de fundo do preloader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loader Animation */
+.loader {
+  border: 5px solid #f3f3f3; /* Cor do anel externo */
+  border-top: 5px solid #3498db; /* Cor do anel animado */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /*====  LAYOUT ============================ */
@@ -208,7 +237,7 @@ nav ul li a::after {
   content: '';
   width: 0%;
   height: 2px;
-  background: var(--newbase-yellow-second);
+  background: var(--newbase-yellow);
 
   position: absolute;
   left: 0;
@@ -389,15 +418,56 @@ nav.show div.icon-close {
 .cards.grid {
   gap: 1.5rem;
 }
-
-.card {
-  padding: 3.625rem 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 0.25rem solid var(--newbase-Blue);
-  border-radius: 0.25rem 0.25rem 0 0;
-  text-align: center;
+.cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.card {
+  position: relative;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background-color: var(--body-color);
+  text-align: center;
+  color: var(--text-color); /* Cor padrão do texto */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#card p span {
+  color: var(--text-color-light);
+}
+/* Estilo do card ativo */
+.card.active {
+  background-color: var(--newbase-pink-second);
+  color: var(--text-color-light);
+}
+
+/* Ocultar texto adicional por padrão */
+.card .more-info {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Exibir texto adicional no card ativo */
+.card.active .more-info {
+  display: block;
+  opacity: 1;
+}
+
+p:not(.more-info) {
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.card .button {
+  margin-top: 1rem;
+}
 .card img {
   display: block;
   margin-bottom: 1.5rem;
@@ -443,21 +513,124 @@ nav.show div.icon-close {
 }
 
 /*====  FOOTER ============================ */
+footer.footer-modern {
+  background: var(--newbase-Blue);
+  color: var(--text-color-light);
+  padding: 2rem 1rem;
+}
+
+footer.footer-modern .container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+footer.footer-modern .footer-brand {
+  text-align: center;
+}
+
+footer.footer-modern .footer-brand img {
+  max-width: 120px;
+  margin: 0 auto 1rem;
+}
+
+footer.footer-modern .footer-column {
+  text-align: center;
+}
+
+footer.footer-modern .footer-column h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+footer.footer-modern .footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer.footer-modern .footer-column ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer.footer-modern .footer-column ul li i {
+  margin-right: 0.5rem;
+}
+
+footer.footer-modern .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+footer.footer-modern .social-links a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--newbase-Blue-second);
+  border-radius: 50%;
+  color: var(--text-color-light);
+  transition: all 0.3s;
+}
+
+footer.footer-modern .social-links a:hover {
+  background: var(--newbase-yellow-second);
+  transform: translateY(-5px);
+}
+
 footer {
   background: var(--newbase-Blue);
+  color: var(--text-color-light);
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
-footer.section {
-  padding: 4rem 0;
+
+footer img {
+  max-width: 100%; /* Limita a largura da imagem ao tamanho do container */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Evita espaçamentos adicionais ao redor da imagem */
+  margin: 0 auto; /* Centraliza a imagem */
+}
+footer .brand img {
+  max-width: 120px; /* Define o tamanho máximo da imagem */
+  width: 100%; /* Torna a largura responsiva */
+  height: auto; /* Mantém a proporção da imagem */
+  margin: 0 auto 1rem; /* Centraliza a imagem */
 }
 
-footer .logo {
-  display: inline-block;
-  margin-bottom: 1.5rem;
+.footer-column h3 {
+  font: 700 1.5rem var(--title-font);
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-brand {
+  text-align: center;
+}
+
+footer .brand {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem; /* Adiciona espaçamento interno */
 }
 
 footer .brand p {
   color: var(--text-color-light);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -466,19 +639,73 @@ footer i {
   color: var(--text-color-light);
 }
 
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-column ul li i {
+  margin-right: 0.5rem;
+  color: var(--newbase-Blue-second);
+}
+
+.footer-column ul li a {
+  color: var(--text-color-light);
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: var(--newbase-yellow-second);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--newbase-Blue-second);
+  color: var(--text-color-light);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: translateY(-8px);
+  background: var(--newbase-yellow-second);
+}
+
 footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   grid-auto-flow: column;
   width: fit-content;
 }
 
 
 footer .social a {
-  transition: 0.3s;
-  display: inline-block;
+  color: var(--text-color-light);
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--newbase-Blue-second);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 footer .social a:hover {
   transform: translateY(-8px);
+  color: var(--newbase-yellow);
 }
 
 /* Back to top */
@@ -619,25 +846,7 @@ footer .social a:hover {
     max-width: 25rem;
   }
 
-  /* footer */
-  footer.section {
-    padding: 3.75rem 0;
-  }
-  footer img {
-    height: 50px; /* Define a altura da logo */
-    width: auto; /* Mantém a proporção da logo */
-  }
 
-  footer .container {
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  footer .logo {
-    font-size: 2.25rem;
-  }
-}
 /* large devices: 1023 > */
 /* Para dispositivos com largura mínima de 1023px */
 @media (min-width: 1023px) {
@@ -660,5 +869,51 @@ footer .social a:hover {
   :root {
     --title-font-size: 1.75rem;
     --subtitle-font-size: 1.125rem;
+  }
+  
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  footer .container {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  .footer-column {
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  footer .brand img {
+    max-width: 100px; /* Reduz o tamanho da imagem para telas menores */
+  }
+
+  footer .brand {
+    margin-bottom: 1rem;
+  }
+
+  footer .brand p {
+    margin-bottom: 0.5rem;
+  }
+
+  footer .social {
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-auto-flow: row;
+    gap: 1rem;
+  }
+
+  footer .social a {
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
   }
 }

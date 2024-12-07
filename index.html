@@ -16,8 +16,17 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+ 
+  <!-- BoxIcons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
 </head>
 <body>
+  <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+  <!-- ***** Preloader End ***** -->
 
   <!-- Header: Navigation bar with logo and menu items -->
   <header id="header">
@@ -89,52 +98,90 @@
 
     <!-- Divider for styling between sections -->
     <div class="divider-2"></div>
-
+    <!-- Services Section -->
+ <main id="main-content">
+    <section id="services" class="section">
+      <header>
+        <h2 class="title">Nossos Serviços</h2>
+        <p>Soluções personalizadas para promover desenvolvimento, bem-estar e equilíbrio emocional.</p>
+      </header>
+      <div class="container grid cards">
            <!-- Service Cards -->
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-pink-second" data-text-color="--text-color-light">
             <img src="./assets/icons-services/acolhimento2.svg" alt="card Sessão de Acolhimento" class=""/>
             <h3 class="title">Sessão de Acolhimento</h3>
-            <p>Apresentação do modelo de trabalho da Clínica Evoluir: uma oportunidade para conhecer nosso espaço, entender as dimensões da intervenção ABA, o processo de avaliação, a importância da supervisão e do envolvimento familiar, além das modalidades terapêuticas oferecidas.</p>
+            <p>Explore nosso espaço e abordagem em terapia comportamental, com foco em avaliação, supervisão e envolvimento familiar.</p>
+            <p class="more-info hidden">
+              <span>Apresentação do modelo de trabalho da Clínica Evoluir: uma oportunidade para conhecer nosso espaço, entender as dimensões da terapia comportamental, o processo de avaliação, a importância da supervisão e do envolvimento familiar, além das modalidades terapêuticas oferecidas.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-orange" data-text-color="--text-color-light">
             <img src="./assets/icons-services/avaliacao.svg" alt="card Avaliação Inicial e Relatório Comportamental" class=""/>
-            <h3 class="title">Avaliação Inicial e Relatório Comportamental</h3>
-            <p>Avaliação do Desenvolvimento e Comportamentos para entender as competências e desafios específicos. Elaboração do relatório completo com análise de dados e descrição do desenvolvimento da criança ou adolescente, plano de intervenção com os objetivos de desenvolvimento personalizados e plano comportamental.</p>
+            <h3 class="title">Avaliação e Plano Personalizado</h3>
+            <p>Avaliação Inicial e Relatório Comportamental com análise do desenvolvimento e plano individualizado para o progresso da criança ou adolescente.</p>
+            <p class="more-info hidden">
+              <span>Avaliação do Desenvolvimento e Comportamentos para entender as competências e desafios específicos. Elaboração do relatório completo com análise de dados e descrição do desenvolvimento da criança ou adolescente, plano de intervenção com os objetivos de desenvolvimento personalizados e plano comportamental.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-Blue" data-text-color="--text-color-light">
             <img src="./assets/icons-services/terapiaaba2.svg" alt="card Terapia Comportamental Intensiva e Semi-intensivo" class=""/>
-            <h3 class="title">Terapia Comportamental Intensiva e Semi-intensiva</h3>
-            <p>Oferecemos sessões individuais de terapia Um-a-Um, onde o terapeuta utiliza estratégias específicas para ensinar competências e ajustar comportamentos.</p>
+            <h3 class="title">Terapia Comportamental</h3>
+            <p>Terapia Comportamental Intensiva e Semi-intensiva com sessões individuais focadas no ensino de competências e ajuste de comportamentos.</p>
+            <p class="more-info hidden">
+              <span>Oferecemos sessões individuais de terapia Um-a-Um, onde o terapeuta utiliza estratégias específicas para ensinar competências e ajustar comportamentos.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-orange-second" data-text-color="--text-color-light">
             <img src="./assets/icons-services/comunicacao.svg" alt="card Comunicação Alternativa Aumentativa (CAA)" class=""/>
-            <h3 class="title">Comunicação Alternativa Aumentativa (CAA)</h3>
-            <p>Soluções personalizadas para facilitar a comunicação de pessoas com dificuldades expressivas, promovendo inclusão e interação.</p>
+            <h3 class="title">Comunicação Alternativa Aumentativa</h3>
+            <p>Apoio personalizado para pessoas com dificuldades expressivas, facilitando a comunicação e promovendo inclusão e interação social.</p>
+            <p class="more-info hidden">
+              <span>Soluções personalizadas para facilitar a comunicação de pessoas com dificuldades expressivas, promovendo inclusão e interação.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-yellow" data-text-color="--text-color-light">
             <img src="./assets/icons-services/mentoria2.svg" alt="card Mentoria e Serviços Online" class=""/>
             <h3 class="title">Mentoria para Profissionais da Educação e Serviços Online</h3>
-            <p>Sessões personalizadas de orientação e suporte para profissionais e cuidadores, proporcionando acompanhamento de qualidade para pacientes que não podem comparecer presencialmente à clínica.</p>
+            <p>Orientação e suporte personalizados para profissionais e cuidadores, com acompanhamento de qualidade à distância.</p>
+            <p class="more-info hidden">
+              <span>Sessões personalizadas de orientação e suporte para profissionais e cuidadores, proporcionando acompanhamento de qualidade para pacientes que não podem comparecer presencialmente à clínica.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-blue" data-text-color="--text-color-light">
             <img src="./assets/icons-services/neurodesenvolvimento.svg" alt="card Pediatria do Neurodesenvolvimento" class=""/>
             <h3 class="title">Pediatria do Neurodesenvolvimento</h3>
-            <p>Especialidade dedicada à avaliação, diagnóstico e intervenção para pessoas neurodivergentes, abordando dificuldades motoras, cognitivas, sociais e emocionais. O serviço abrange desde atrasos no desenvolvimento até condições como autismo e PHDA, oferecendo suporte especializado para promover o desenvolvimento integral do paciente.</p>
+            <p>Avaliação, diagnóstico e intervenção para dificuldades motoras, cognitivas, sociais e emocionais, incluindo autismo e PHDA, com foco no desenvolvimento integral.</p>
+            <p class="more-info hidden">
+              <span>Especialidade dedicada à avaliação, diagnóstico e intervenção para pessoas neurodivergentes, abordando dificuldades motoras, cognitivas, sociais e emocionais. O serviço abrange desde atrasos no desenvolvimento até condições como autismo e PHDA, oferecendo suporte especializado para promover o desenvolvimento integral do paciente.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-pink" data-text-color="--text-color-light">
             <img src="./assets/icons-services/terapiafamiliar.svg" alt="card Terapia Familiar e Casal" class=""/>
-            <h3 class="title">Terapia Familiar/Casal</h3>
-            <p>Abordagem terapêutica focada em melhorar a comunicação, resolver conflitos e fortalecer os vínculos entre familiares ou parceiros, promovendo relacionamentos mais saudáveis e harmoniosos.</p>
+            <h3 class="title">Terapia Familiar e de Casal</h3>
+            <p>Terapia para melhorar a comunicação, resolver conflitos e promover relacionamentos harmoniosos.</p>
+            <p class="more-info hidden">
+              <span>Abordagem terapêutica focada em melhorar a comunicação, resolver conflitos e fortalecer os vínculos entre familiares ou parceiros, promovendo relacionamentos mais saudáveis e harmoniosos.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
-          <div class="card">
+          <div class="card" data-bg-color="--newbase-Blue-second" data-text-color="--text-color-light">
             <img src="./assets/icons-services/psycoterapia.svg" alt="card Psicoterapia Individual" class=""/>
             <h3 class="title">Psicoterapia Individual</h3>
-            <p>Atendimento personalizado focado nas necessidades e objetivos pessoais do paciente. Um espaço seguro e acolhedor para explorar emoções, desenvolver autoconhecimento e enfrentar desafios pessoais, promovendo o crescimento e o equilíbrio emocional.</p>
+            <p>Espaço seguro para explorar emoções, desenvolver autoconhecimento e promover equilíbrio emocional.</p>
+            <p class="more-info hidden">
+              <span>Atendimento personalizado focado nas necessidades e objetivos pessoais do paciente. Um espaço seguro e acolhedor para explorar emoções, desenvolver autoconhecimento e enfrentar desafios pessoais, promovendo o crescimento e o equilíbrio emocional.</span>
+            </p>
+            <button class="button more-info-btn">Ver Mais</button>
           </div>
         </div>
       </div>
-    </section>
-
+  </main>
     <!-- Divider for styling between sections -->
     <div class="divider-1"></div>
 
@@ -193,23 +240,37 @@
   </main>
 
   <!-- Footer Section -->
-  <footer class="section">
-    <div class="container grid">
-      <div class="brand">
-        <img src="./image/Logo02.svg" width="#home" height=""alt="">
-        <!--<a class="logo logo-alt" href="#home">Jarbas<span>Ângelo</span>.</a>-->
-        <p>©2022 Jarbas Ângelo.</p>
-        <p>Todos os direitos reservados.</p>
+  <footer class="section footer-modern">
+    <div class="container">
+      <!-- Logo e Branding -->
+      <div class="footer-brand">
+        <img src="./image/logofooter.png" alt="Logo Clínica Evoluir" />
+        <p>&copy; 2024 Clínica Evoluir. Todos os direitos reservados.</p>
       </div>
-      <div class="social grid">
-        <!-- Social Media Links -->
-        <a href="https://instagram.com/evoluir.cdi_" target="_blank"><i class="icon-instagram"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="icon-facebook"></i></a>
-        <a href="https://youtube.com" target="_blank"><i class="icon-youtube"></i></a>
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#location">Localização</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+      <!-- Redes Sociais -->
+      <div class="footer-column">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://instagram.com/evoluir.cdi_" target="_blank" aria-label="Instagram"><i class="icon-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="icon-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="icon-youtube"></i></a>
+        </div>
       </div>
     </div>
   </footer>
-
+  
+  
   <!-- Back to top button -->
   <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
 
