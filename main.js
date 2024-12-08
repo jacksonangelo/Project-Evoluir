@@ -76,14 +76,14 @@ const psychologists = [
   {
     id: 1,
     name: 'Jarbas Garcia',
-    photo: './assets/team/garciajarbas.JPG',
-    details: 'Atualmente é mestrando em Psicopatologias do Desenvolvimento da Criança e do Adolescente na Universidade de Lisboa, curso iniciado em 2023. Desde 2024, atua como diretor clínico no Centro de Desenvolvimento Infantil Evoluir. Foi professor das disciplinas de Estratégias e Técnicas para Inclusão Escolar e Elaboração de Programa de Ensino Individualizado no curso de pós-graduação em Análise do Comportamento Aplicada (ABA) ao Autismo, promovido pelo Centro de Educação Superior Continuada. Desde 2015, tem experiência profissional na implementação de estratégias comportamentais voltadas para pessoas com diagnóstico de Transtorno do Espectro do Autismo, incluindo atuação internacional em intervenção ABA em Portugal.'
+    photo: './assets/team/2.png',
+    details: 'Pós-graduação em Intervenção ABA para Autismo e Deficiência Intelectual pelo Centro Universitário Celso Lisboa (2021). Atualmente é mestrando em Psicopatologias do Desenvolvimento da Criança e do Adolescente na Universidade de Lisboa, curso iniciado em 2023. Desde 2024, atua como diretor clínico no Centro de Desenvolvimento Infantil Evoluir. Foi professor das disciplinas de Estratégias e Técnicas para Inclusão Escolar e Elaboração de Programa de Ensino Individualizado no curso de pós-graduação em Análise do Comportamento Aplicada (ABA) ao Autismo, promovido pelo Centro de Educação Superior Continuada. Desde 2015, tem experiência profissional na implementação de estratégias comportamentais voltadas para pessoas com diagnóstico de Transtorno do Espectro do Autismo, incluindo atuação internacional em intervenção ABA em Portugal.'
   },
   {
     id: 2,
     name: 'Juliana',
-    photo: './assets/team/2ju.png',
-    details: 'Especialista em psicologia infantil: Psicopedagoga, Pós-graduada em Análise do Comportamento Aplicada ao Autismo e Deficiência Intelectual pelo CBI of Miami, Especialistade em intervenção precoce (primeira infância), Supervisora clínica, Formação em orientação parental pelo PDA/EUA , Formação nas Avaliações: VB-MAPP, ABLLs e Socially Savvy, Participação em congressos e eventos de atualização voltados para autismo.'
+    photo: './assets/team/1.png',
+    details: '⁠Pós graduada em Análise do comportamento Aplicada ao Autismo e deficiência intelectual pelo CBI of Miami. Especialista em psicologia infantil: Psicopedagoga, Pós-graduada em Análise do Comportamento Aplicada ao Autismo e Deficiência Intelectual pelo CBI of Miami, Especialistade em intervenção precoce (primeira infância), Supervisora clínica, Formação em orientação parental pelo PDA/EUA , Formação nas Avaliações: VB-MAPP, ABLLs e Socially Savvy, Participação em congressos e eventos de atualização voltados para autismo.'
   }
 ];
 
