@@ -182,36 +182,90 @@
         </div>
       </div>
   </main>
+      <!-- Divider for styling between sections -->
+      <div class="divider-2"></div>
+
+     <!-- TEAM Section -->
+<section class="section" id="team">
+  <div class="container">
+    <header>
+      <h2 class="title">Nossa Equipe de Psicólogos</h2>
+      <p>Conheça nossos especialistas dedicados ao desenvolvimento e bem-estar infantil.</p>
+    </header>
+
+    <div class="grid team-container">
+      <!-- Card de Psicólogo 1 -->
+      <div class="team-card">
+        <img src="./assets/team/1.png" alt="Foto de Jarbas Garcia" class="profile-photo">
+        <h3>Jarbas Garcia</h3>
+        <p><strong>Graduação:</strong> Licenciado em Psicologia pela Universidade de Fortaleza (2018)</p>
+        <p><strong>Especialidades:</strong> Pós-graduação em Intervenção ABA para Autismo e Deficiência Intelectual pelo Centro Universitário Celso Lisboa (2021).</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+          <a href="#" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+        </div>
+        <button class="button more-info-btn" data-id="1">Ver Mais</button>
+      </div>
+
+      <!-- Card de Psicólogo 2 -->
+      <div class="team-card">
+        <img src="./assets/team/2ju.png" alt="Foto de Juliana" class="profile-photo">
+        <h3>Juliana</h3>
+        <p><strong>Graduação:</strong> Graduada em Psicologia Educacional e Clínica pela UEMG</p>
+        <p><strong>Especialidades:</strong> ⁠Pós graduada em Análise do comportamento Aplicada ao Autismo e deficiência intelectual pelo CBI of Miami.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+          <a href="#" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+        </div>
+        <button class="button more-info-btn" data-id="2">Ver Mais</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de Detalhes -->
+<div id="team-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <img src="" alt="Foto do Psicólogo" class="modal-photo">
+    <h3 id="modal-name">Nome do Psicólogo</h3>
+    <p id="modal-details">Aqui estarão as informações completas do psicólogo, incluindo sua trajetória e formação.</p>
+    <button class="button close-modal">Fechar</button>
+  </div>
+</div>
+
     <!-- Divider for styling between sections -->
     <div class="divider-1"></div>
 
-    <!-- LOCALIZAÇÃO Section -->
+<!-- LOCALIZAÇÃO Section -->
 <section class="section" id="location">
   <div class="container grid">
     <header>
       <h2 class="title">Localização da Clínica</h2>
       <p>Encontre-nos em nosso endereço para atendimento presencial.</p>
     </header>
-    <div class="map">
-      <!-- Google Maps iframe with the address R. da Liberdade 70A -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.1234654!2d-9.1456785!3d38.7123897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1934755e4bca45%3A0x12cd34f098a9b9df!2sR.%20da%20Liberdade%2070A%2C%20Lisboa%2C%20Portugal!5e0!3m2!1spt-BR!2spt!4v1610000000000!5m2!1spt-BR!2spt"
-        width="100%"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-    </div>
-    <div class="address">
-      <p><strong>Endereço:</strong> R. da Liberdade 70A, Lisboa, Portugal</p>
-      <p><strong>Horário de atendimento:</strong> Segunda a Sexta, das 9h às 18h</p>
-    <!-- Swiper Pagination -->
-    <div class="swiper-pagination"></div>
 
+    <div class="map">
+      <!-- Google Maps iframe com o endereço atualizado para R. da Liberdade 70A, 2805-155 Almada -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.9540715539124!2d-9.164039724961436!3d38.672923571772834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1934e3cde5fdc9%3A0x9221259702b2c5a0!2sR.%20da%20Liberdade%2070A%2C%202805-155%20Almada!5e0!3m2!1spt-PT!2spt!4v1733626797062!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="address">
+      <p><strong>Endereço:</strong> R. da Liberdade 70A, 2805-155 Almada, Portugal</p>
+      <p><strong>Horário de atendimento:</strong> Segunda a Sexta, das 9h às 18h</p>
     </div>
   </div>
 </section>
+
     <!-- Divider for styling between sections -->
     <div class="divider-2"></div>
 
@@ -220,8 +274,9 @@
       <div class="container grid">
         <div class="text">
           <h2 class="title">Entre em contato com a gente!</h2>
-          <p>Entre em contato com Jarbas Ângelo, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
-          <a href="https://api.whatsapp.com/send?phone=+351920132818&text=Oi! Gostaria de agendar um horário" class="button" target="_blank">
+          <p>Estamos aqui para esclarecer suas dúvidas, acolher suas sugestões e ouvir suas críticas, sempre com o objetivo de oferecer o melhor para você e sua família.</p>
+          <a href="https://api.whatsapp.com/send?phone=+351915648104&text=Olá! Gostaria de agendar um horário na Clínica Evoluir" class="button" target="_blank" rel="noopener noreferrer" 
+          aria-label="Entre em contato pelo WhatsApp para agendar um horário na Clínica Evoluir">
             <i class="icon-whatsapp"></i> Entrar em contato
           </a>
         </div>

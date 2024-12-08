@@ -63,6 +63,58 @@ document.querySelectorAll(".more-info-btn").forEach((button) => {
   });
 });
 
+// Lógica de abertura e fechamento do modal de equipe
+const teamCards = document.querySelectorAll('.team-card .more-info-btn');
+const modal = document.getElementById('team-modal');
+const modalCloseButton = document.querySelector('.close-button');
+const closeModalButton = document.querySelector('.close-modal');
+const modalName = document.getElementById('modal-name');
+const modalDetails = document.getElementById('modal-details');
+const modalPhoto = document.querySelector('.modal-photo');
+
+const psychologists = [
+  {
+    id: 1,
+    name: 'Jarbas Garcia',
+    photo: './assets/team/garciajarbas.JPG',
+    details: 'Atualmente é mestrando em Psicopatologias do Desenvolvimento da Criança e do Adolescente na Universidade de Lisboa, curso iniciado em 2023. Desde 2024, atua como diretor clínico no Centro de Desenvolvimento Infantil Evoluir. Foi professor das disciplinas de Estratégias e Técnicas para Inclusão Escolar e Elaboração de Programa de Ensino Individualizado no curso de pós-graduação em Análise do Comportamento Aplicada (ABA) ao Autismo, promovido pelo Centro de Educação Superior Continuada. Desde 2015, tem experiência profissional na implementação de estratégias comportamentais voltadas para pessoas com diagnóstico de Transtorno do Espectro do Autismo, incluindo atuação internacional em intervenção ABA em Portugal.'
+  },
+  {
+    id: 2,
+    name: 'Juliana',
+    photo: './assets/team/2ju.png',
+    details: 'Especialista em psicologia infantil: Psicopedagoga, Pós-graduada em Análise do Comportamento Aplicada ao Autismo e Deficiência Intelectual pelo CBI of Miami, Especialistade em intervenção precoce (primeira infância), Supervisora clínica, Formação em orientação parental pelo PDA/EUA , Formação nas Avaliações: VB-MAPP, ABLLs e Socially Savvy, Participação em congressos e eventos de atualização voltados para autismo.'
+  }
+];
+
+teamCards.forEach(button => {
+  button.addEventListener('click', () => {
+    const id = parseInt(button.dataset.id);
+    const psychologist = psychologists.find(p => p.id === id);
+    if (psychologist) {
+      modalName.textContent = psychologist.name;
+      modalDetails.textContent = psychologist.details;
+      modalPhoto.src = psychologist.photo;
+      modal.style.display = 'block';
+    }
+  });
+});
+
+modalCloseButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+closeModalButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
 
 /* quando clicar em um item do menu, esconder o menu */
 const links = document.querySelectorAll('nav ul li a')

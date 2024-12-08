@@ -483,6 +483,194 @@ p:not(.more-info) {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
+/*====  LOCATION SECTION ============================ */
+#location {
+  background-color: var(--body-color);
+  padding: 4rem 0;
+}
+
+#location .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#location header h2.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#location header p {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+#location .map iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#location .address {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#location .address p {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+#location .address p strong {
+  color: var(--newbase-blue);
+  font-weight: bold;
+}
+
+/*====  TEAM SECTION ============================ */
+.team-card{
+  font-size: 1.6rem;
+}
+
+.team-card p {
+  margin-bottom: 0.5rem;
+}
+.team-card .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.team-card .social-links a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--newbase-Blue-second);
+  border-radius: 50%;
+  color: var(--text-color-light);
+  transition: all 0.3s;
+}
+
+.team-card .social-links a:hover {
+  color: var(--newbase-pink);
+}
+
+/*====  TEAM SECTION ============================ */
+#team {
+  background-color: var(--body-color);
+}
+
+.team-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.team-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.team-card img.profile-photo {
+  width: clamp(100px, 20vw, 150px); /* Responsivo com largura mínima de 100px e máxima de 150px */
+  height: clamp(100px, 20vw, 150px); /* Mantém a imagem perfeitamente quadrada */
+  border-radius: 50%; /* Torna a imagem circular */
+  outline: 3px solid var(--newbase-Blue); /* Contorno externo adicional */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  object-fit: cover; /* Garante que a imagem fique bem ajustada ao círculo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.team-card img.profile-photo:hover {
+  transform: scale(1.2) translateY(-8px); /* Aumenta ligeiramente a imagem no hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
+  outline-color: var(--newbase-yellow); /* Muda a cor do contorno principal */
+}
+
+.team-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-card{
+  font-size: 1.6rem;
+}
+
+.team-card p {
+  margin-bottom: 0.5rem;
+}
+.team-card .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.team-card .social-links a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--newbase-Blue-second);
+  border-radius: 50%;
+  color: var(--text-color-light);
+  transition: all 0.3s;
+}
+
+.team-card .social-links a:hover {
+  color: var(--body-color);
+}
+.team-card .button {
+  margin-top: 1rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 10% auto;
+  text-align: center;
+  position: relative;
+}
+
+.modal-photo {
+  width: clamp(100px, 20vw, 150px); /* Responsivo com largura mínima de 100px e máxima de 150px */
+  height: clamp(100px, 20vw, 150px); /* Mantém a imagem perfeitamente quadrada */
+  border-radius: 50%; /* Torna a imagem circular */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  object-fit: cover; /* Garante que a imagem fique bem ajustada ao círculo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  margin-top: 1rem;
+}
+
 
 /*====  CONTACT ============================ */
 #contact .grid {
@@ -582,7 +770,7 @@ footer.footer-modern .social-links a {
 }
 
 footer.footer-modern .social-links a:hover {
-  background: var(--newbase-yellow-second);
+  background: var(--newbase-pink);
   transform: translateY(-5px);
 }
 
@@ -655,7 +843,7 @@ footer i {
 }
 
 .footer-column ul li a:hover {
-  color: var(--newbase-yellow-second);
+  color: var(--newbase-yellow);
 }
 
 .social-links {
@@ -678,7 +866,7 @@ footer i {
 
 .social-links a:hover {
   transform: translateY(-8px);
-  background: var(--newbase-yellow-second);
+  background: var(--newbase-pink);
 }
 
 footer .social {
