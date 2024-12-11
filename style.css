@@ -347,9 +347,45 @@ margin:4em auto;
 
 .carousel-open:checked + .carousel-item {
   position: static;
-  opacity: 100;
+  opacity: 1;
 }
 
+.carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text-color-light);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 90%;
+}
+.carousel-caption h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-caption .button {
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-caption .button:hover {
+  background-color: var(--newbase-yellow);
+  color: var(--text-color-light);
+}
 .carousel-item {
   position: absolute;
   opacity: 0;
@@ -386,24 +422,24 @@ margin:4em auto;
 }
 
 .carousel-control.prev {
-  left: 2%;
+left: 2%;
 user-select: none;
 }
 
 .carousel-control.next {
-  right: 2%;
+right: 2%;
 user-select: none;
 }
 
 .carousel-control:hover {
-  background: var(--newbase-yellow);
-  color: white;
+background: var(--newbase-yellow);
+color: white;
 }
 
 #carousel-1:checked ~ .control-1,
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3 {
-  display: block;
+display: block;
 }
 
 .carousel-indicators {
@@ -412,7 +448,8 @@ user-select: none;
   padding: 0;
   position: absolute;
   bottom: 2%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   right: 0;
   text-align: center;
   z-index: 10;
@@ -424,44 +461,44 @@ user-select: none;
 }
 
 .carousel-bullet {
-  color: var(--newbase-blue);
-  cursor: pointer;
-  display: block;
-  font-size: 35px;
+color: var(--newbase-blue);
+cursor: pointer;
+display: block;
+font-size: 2rem;
 padding:0 10px;
 }
 
 .carousel-bullet:hover {
-  color: var(--newbase-pink);
+color: var(--newbase-pink);
 }
 
 #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-  color: var(--newbase-yellow);
+color: var(--newbase-yellow);
 }
 /*====  HOME ============================ */
 #home {
-  overflow: hidden;
+overflow: hidden;
 }
 
 #home .container {
-  margin: 0;
+margin: 0;
 }
 
 #home .image {
-  position: relative;
+position: relative;
 }
 
 #home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: var(--newbase-pink);
-  position: absolute;
-  top: -16.8%;
-  left: 16.7%;
-  z-index: 0;
+content: '';
+height: 100%;
+width: 100%;
+background: var(--newbase-pink);
+position: absolute;
+top: -16.8%;
+left: 16.7%;
+z-index: 0;
 }
 
 #home .image img {
@@ -533,7 +570,7 @@ padding:0 10px;
 .cards {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cada card ocupa um espaço flexível */
 }
 
 .card {
@@ -561,6 +598,10 @@ padding:0 10px;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.card .title {
+  font-size: 1.5rem; /* Tamanho padrão */
 }
 
 /* Exibir texto adicional no card ativo */
@@ -592,8 +633,126 @@ p:not(.more-info) {
 }
 
 .card .title {
-  font-size: 1.5rem;
   margin-bottom: 0.75rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsivo com tamanho mínimo de 1rem e máximo de 1.5rem */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Impede o transbordamento */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+/* ==== GALERIA Section ==== */
+#gallery {
+  background-color: var(--body-color);
+  padding: 4rem 0;
+}
+
+#gallery .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#gallery header h2.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#gallery header p {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px; /* Tamanho padronizado de todas as imagens */
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ==== Lightbox para Galeria ==== */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.gallery-modal.active {
+  display: flex;
+}
+
+.gallery-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery-modal .controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.gallery-modal .control {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: var(--text-color-light);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.gallery-modal .control:hover {
+  background-color: var(--newbase-yellow);
+}
+
+.gallery-modal .control-prev {
+  position: absolute;
+  left: 20px;
+}
+
+.gallery-modal .control-next {
+  position: absolute;
+  right: 20px;
 }
 /*====  LOCATION SECTION ============================ */
 #location {
@@ -1041,6 +1200,7 @@ footer .social a:hover {
 }
 
 /*========= MEDIA QUERIES =========*/
+
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
   /* reusable classes */
@@ -1061,7 +1221,7 @@ footer .social a:hover {
     margin-left: auto;
     margin-right: auto;
   }
-
+  
   .button {
     height: 3.125rem;
   }
@@ -1145,7 +1305,7 @@ footer .social a:hover {
   #contact .text {
     max-width: 25rem;
   }
-
+}
 
 /* large devices: 1023 > */
 /* Para dispositivos com largura mínima de 1023px */
@@ -1153,6 +1313,9 @@ footer .social a:hover {
   :root {
     --title-font-size: 2.5rem;
     --subtitle-font-size: 1.25rem;
+  }
+  .card .title {
+    font-size: 2rem; /* Ajuste para telas médias */
   }
 }
 /* large devices: 992 > */
@@ -1171,8 +1334,9 @@ footer .social a:hover {
     --subtitle-font-size: 1.125rem;
   }
   
-  .cards {
-    grid-template-columns: repeat(4, 1fr);
+  .card .title {
+      font-size: clamp(0.875rem, 2vw, 1.25rem); /* Ajuste para telas pequenas */
+    }
   }
 
   footer .container {
@@ -1215,5 +1379,10 @@ footer .social a:hover {
     width: 40px;
     height: 40px;
     font-size: 1.25rem;
+  }
+  @media (max-width: 480px) {
+    .card .title {
+      font-size: clamp(0.75rem, 3vw, 1rem); /* Ajuste para telas muito pequenas */
+    }
   }
 }

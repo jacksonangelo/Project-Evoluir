@@ -114,6 +114,63 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Galeria de Imagens com Lightbox e Botões de Controle
+const galleryItems = document.querySelectorAll('.gallery-item img');
+const galleryModal = document.createElement('div');
+galleryModal.classList.add('gallery-modal');
+document.body.appendChild(galleryModal);
+
+let currentImageIndex = 0;
+
+const createModalContent = (src, alt) => {
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = alt;
+  return img;
+};
+
+const updateModalImage = (index) => {
+  if (index < 0) index = galleryItems.length - 1;
+  if (index >= galleryItems.length) index = 0;
+  currentImageIndex = index;
+  const img = createModalContent(galleryItems[index].src, galleryItems[index].alt);
+  galleryModal.innerHTML = '';
+  galleryModal.appendChild(img);
+  createModalControls();
+};
+
+const createModalControls = () => {
+  const controlsContainer = document.createElement('div');
+  controlsContainer.classList.add('controls');
+
+  const prevButton = document.createElement('div');
+  prevButton.classList.add('control', 'control-prev');
+  prevButton.innerHTML = '&#9664;'; // Símbolo de seta para esquerda
+  prevButton.addEventListener('click', () => updateModalImage(currentImageIndex - 1));
+
+  const nextButton = document.createElement('div');
+  nextButton.classList.add('control', 'control-next');
+  nextButton.innerHTML = '&#9654;'; // Símbolo de seta para direita
+  nextButton.addEventListener('click', () => updateModalImage(currentImageIndex + 1));
+
+  controlsContainer.appendChild(prevButton);
+  controlsContainer.appendChild(nextButton);
+  galleryModal.appendChild(controlsContainer);
+};
+
+galleryItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    currentImageIndex = index;
+    updateModalImage(currentImageIndex);
+    galleryModal.classList.add('active');
+  });
+});
+
+galleryModal.addEventListener('click', (e) => {
+  if (!e.target.closest('.control')) {
+    galleryModal.classList.remove('active');
+  }
+});
 
 
 /* quando clicar em um item do menu, esconder o menu */
