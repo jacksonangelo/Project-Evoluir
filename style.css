@@ -42,10 +42,10 @@ img {
   --newbase-yellow: #edc032;
 
   --newbase-Blue-second: #6d9cbc;
-  --newbase-blue-second:#79e0f7;
+  --newbase-blue-second: #79e0f7;
   --newbase-pink-second: #f489af;
-  --newbase-orange-second:  #f7c28d;
-  --newbase-yellow-second:#f9df95;
+  --newbase-orange-second: #f7c28d;
+  --newbase-yellow-second: #f9df95;
 
 
   /* fonts */
@@ -92,20 +92,16 @@ body {
 
 .divider-1 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue2), 36%, 57%, 1),
-    hsla(var(--hue2), 90%, 88%, 0.34)
-  );
+  background: linear-gradient(270deg,
+      hsla(var(--hue2), 36%, 57%, 1),
+      hsla(var(--hue2), 90%, 88%, 0.34));
 }
 
 .divider-2 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue2), 90%, 88%, 0.34),
-    hsla(var(--hue2), 36%, 57%, 1)
-  );
+  background: linear-gradient(270deg,
+      hsla(var(--hue2), 90%, 88%, 0.34),
+      hsla(var(--hue2), 36%, 57%, 1));
 }
 
 /* Preloader */
@@ -115,7 +111,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* Cor de fundo do preloader */
+  background-color: #ffffff;
+  /* Cor de fundo do preloader */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,8 +121,10 @@ body {
 
 /* Loader Animation */
 .loader {
-  border: 5px solid #f3f3f3; /* Cor do anel externo */
-  border-top: 5px solid #3498db; /* Cor do anel animado */
+  border: 5px solid #f3f3f3;
+  /* Cor do anel externo */
+  border-top: 5px solid #3498db;
+  /* Cor do anel animado */
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -133,8 +132,13 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*====  LAYOUT ============================ */
@@ -208,14 +212,16 @@ nav {
   width: 100%;
 }
 
-nav .title{
+nav .title {
   color: #e4e4e4;
   font-weight: bold;
 }
 
 nav img {
-  height: 50px; /* Define a altura da logo */
-  width: auto; /* Mantém a proporção da logo */
+  height: 50px;
+  /* Define a altura da logo */
+  width: auto;
+  /* Mantém a proporção da logo */
 }
 
 
@@ -296,6 +302,7 @@ nav.show ul.grid {
   cursor: pointer;
   transition: transform 0.2s ease-in-out, color 0.2s ease;
 }
+
 /* Transformação ao clicar no ícone de hambúrguer */
 .icon-menu:active {
   transform: scale(1.2) rotate(45deg);
@@ -323,16 +330,18 @@ nav.show div.icon-close {
   visibility: visible;
   opacity: 1;
   top: 1.5rem;
-  transform: rotate(-360deg) scale(1.2); /* Efeito de rotação no 'X' */
-  color: var(--newbase-yellow); /* Cor alterada ao exibir */
+  transform: rotate(-360deg) scale(1.2);
+  /* Efeito de rotação no 'X' */
+  color: var(--newbase-yellow);
+  /* Cor alterada ao exibir */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* ===== CAROUSEL SECTION ===== */
 .carousel {
-width:90%;
-margin:4em auto;
-/*height:300px;/*ajustar altura do carrossel e a sombra*/
+  width: 90%;
+  margin: 4em auto;
+  /*height:300px;/*ajustar altura do carrossel e a sombra*/
   position: relative;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
 
@@ -342,10 +351,10 @@ margin:4em auto;
   position: relative;
   overflow: hidden;
   width: 100%;
-/*height:300px;/*ajustar altura da caixa*/
+  /*height:300px;/*ajustar altura da caixa*/
 }
 
-.carousel-open:checked + .carousel-item {
+.carousel-open:checked+.carousel-item {
   position: static;
   opacity: 1;
 }
@@ -362,6 +371,7 @@ margin:4em auto;
   border-radius: 10px;
   max-width: 90%;
 }
+
 .carousel-caption h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -386,6 +396,7 @@ margin:4em auto;
   background-color: var(--newbase-yellow);
   color: var(--text-color-light);
 }
+
 .carousel-item {
   position: absolute;
   opacity: 0;
@@ -422,24 +433,25 @@ margin:4em auto;
 }
 
 .carousel-control.prev {
-left: 2%;
-user-select: none;
+  left: 2%;
+  user-select: none;
 }
 
 .carousel-control.next {
-right: 2%;
-user-select: none;
+  right: 2%;
+  user-select: none;
 }
 
 .carousel-control:hover {
-background: var(--newbase-yellow);
-color: white;
+  background: var(--newbase-yellow);
+  color: white;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-display: block;
+#carousel-1:checked~.control-1,
+#carousel-2:checked~.control-2,
+#carousel-3:checked~.control-3,
+#carousel-4:checked~.control-4 {
+  display: block;
 }
 
 .carousel-indicators {
@@ -461,69 +473,91 @@ display: block;
 }
 
 .carousel-bullet {
-color: var(--newbase-blue);
-cursor: pointer;
-display: block;
-font-size: 2rem;
-padding:0 10px;
+  color: var(--newbase-blue);
+  cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  padding: 0 10px;
 }
 
 .carousel-bullet:hover {
-color: var(--newbase-pink);
+  color: var(--newbase-pink);
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-color: var(--newbase-yellow);
+#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: var(--newbase-yellow);
 }
+
 /*====  HOME ============================ */
+/* === Seção Home - Revisão e Melhorias === */
 #home {
-overflow: hidden;
+  padding: 7rem 0;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #home .container {
-margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Colunas para texto e imagem */
+  align-items: center;
+  /* Centraliza o conteúdo verticalmente */
+  gap: 3rem;
 }
 
 #home .image {
-position: relative;
-}
-
-#home .image::before {
-content: '';
-height: 100%;
-width: 100%;
-background: var(--newbase-pink);
-position: absolute;
-top: -16.8%;
-left: 16.7%;
-z-index: 0;
-}
-
-#home .image img {
   position: relative;
-  right: 2.93rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
+#home img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  /* Garante que a imagem se ajuste ao espaço */
 }
 
 #home .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  max-width: 600px;
+  text-align: left;
+}
+
+#home .text-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  color: var(--text-color-light);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
 }
 
-#home .text h1 {
-  margin-bottom: 1rem;
+/* Correção do botão da section Home */
+#home .button-primary {
+  display: flow-root;
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
 }
 
-#home .text p {
-  margin-bottom: 2rem;
+#home .button-primary:hover {
+  background-color: var(--newbase-yellow);
 }
+
 
 /*====  ABOUT ============================ */
 #about {
@@ -532,6 +566,12 @@ z-index: 0;
 
 #about .container {
   margin: 0;
+  display: grid;
+  gap: 2rem;
+  /* Espaçamento entre os elementos */
+  align-items: center;
+  /* Alinha o texto e a imagem verticalmente */
+  padding: 2rem;
 }
 
 #about .image {
@@ -551,6 +591,13 @@ z-index: 0;
 
 #about .image img {
   position: relative;
+  width: 100%;
+  height: auto;
+  /* Mantém a proporção da imagem */
+  object-fit: cover;
+  /* Ajusta o conteúdo ao contêiner */
+  border-radius: 0.5rem;
+  /* Cantos arredondados */
 }
 
 #about .image img,
@@ -567,10 +614,12 @@ z-index: 0;
 .cards.grid {
   gap: 1.5rem;
 }
+
 .cards {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cada card ocupa um espaço flexível */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Cada card ocupa um espaço flexível */
 }
 
 .card {
@@ -580,13 +629,15 @@ z-index: 0;
   border-radius: 0.5rem;
   background-color: var(--body-color);
   text-align: center;
-  color: var(--text-color); /* Cor padrão do texto */
+  color: var(--text-color);
+  /* Cor padrão do texto */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #card p span {
   color: var(--text-color-light);
 }
+
 /* Estilo do card ativo */
 .card.active {
   background-color: var(--newbase-pink-second);
@@ -601,13 +652,26 @@ z-index: 0;
 }
 
 .card .title {
-  font-size: 1.5rem; /* Tamanho padrão */
+  font-size: 1.5rem;
+  /* Tamanho padrão */
+}
+
+.card h2.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Exibir texto adicional no card ativo */
 .card.active .more-info {
   display: block;
   opacity: 1;
+  font-size: 4rem;
+}
+.card.active p {
+  display: block;
+  opacity: 1;
+  font-size: 2rem;
 }
 
 p:not(.more-info) {
@@ -621,6 +685,7 @@ p:not(.more-info) {
 .card .button {
   margin-top: 1rem;
 }
+
 .card img {
   display: block;
   margin-bottom: 1.5rem;
@@ -634,11 +699,44 @@ p:not(.more-info) {
 
 .card .title {
   margin-bottom: 0.75rem;
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsivo com tamanho mínimo de 1rem e máximo de 1.5rem */
-  white-space: nowrap; /* Evita quebra de linha */
-  overflow: hidden; /* Impede o transbordamento */
-  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  font-size: clamp(1.875rem, 2.5vw, 1.5rem);
+  /* Responsivo com tamanho mínimo de 1rem e máximo de 1.5rem */
+  /* Evita quebra de linha */
+  overflow: hidden;
+  /* Impede o transbordamento */
+  text-overflow: ellipsis;
+  /* Adiciona "..." se o texto for muito longo */
 }
+/* ==== Correções para a section services ==== */
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#services header {
+  text-align: center;
+  max-width: 1200px; /* Define a largura máxima para o conteúdo */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#services .container {
+  max-width: 1200px; /* Define a largura máxima para os cards */
+  width: 100%; 
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 2rem;
+}
+
+#services .card {
+  width: 100%; /* Garante que o card ocupe toda a largura disponível */
+  max-width: 100%; /* Impede que o card ultrapasse o limite da grade */
+}
+
 /* ==== GALERIA Section ==== */
 #gallery {
   background-color: var(--body-color);
@@ -678,7 +776,8 @@ p:not(.more-info) {
 
 .gallery-item img {
   width: 100%;
-  height: 200px; /* Tamanho padronizado de todas as imagens */
+  height: 200px;
+  /* Tamanho padronizado de todas as imagens */
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -754,78 +853,59 @@ p:not(.more-info) {
   position: absolute;
   right: 20px;
 }
-/*====  LOCATION SECTION ============================ */
+
+/*==== LOCATION ============================ */
 #location {
   background-color: var(--body-color);
   padding: 4rem 0;
 }
 
 #location .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: center;
 }
 
-#location header h2.title {
-  font-size: 2.5rem;
+#location .text {
+  text-align: center;
+}
+
+#location .title {
+  font-size: 2rem;
   margin-bottom: 1rem;
-  text-align: center;
+  color: black;
 }
 
-#location header p {
-  text-align: center;
+#location p {
   font-size: 1.125rem;
   margin-bottom: 2rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+#location .button-primary {
+  display: inline-block;
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+#location .button-primary:hover {
+  background-color: var(--newbase-yellow);
+  transform: translateY(-5px);
 }
 
 #location .map iframe {
-  width: 100%;
-  height: 450px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#location .address {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-#location .address p {
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
-}
-
-#location .address p strong {
-  color: var(--newbase-blue);
-  font-weight: bold;
-}
-
-/*====  TEAM SECTION ============================ */
-.team-card{
-  font-size: 1.6rem;
-}
-
-.team-card p {
-  margin-bottom: 0.5rem;
-}
-.team-card .social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-.team-card .social-links a {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--newbase-Blue-second);
-  border-radius: 50%;
-  color: var(--text-color-light);
-  transition: all 0.3s;
-}
-
-.team-card .social-links a:hover {
-  color: var(--newbase-pink);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 350px;
 }
 
 /*====  TEAM SECTION ============================ */
@@ -849,19 +929,28 @@ p:not(.more-info) {
 }
 
 .team-card img.profile-photo {
-  width: clamp(100px, 20vw, 150px); /* Responsivo com largura mínima de 100px e máxima de 150px */
-  height: clamp(100px, 20vw, 150px); /* Mantém a imagem perfeitamente quadrada */
-  border-radius: 50%; /* Torna a imagem circular */
-  outline: 3px solid var(--newbase-Blue); /* Contorno externo adicional */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra suave */
-  object-fit: cover; /* Garante que a imagem fique bem ajustada ao círculo */
+  width: clamp(100px, 20vw, 150px);
+  /* Responsivo com largura mínima de 100px e máxima de 150px */
+  height: clamp(100px, 20vw, 150px);
+  /* Mantém a imagem perfeitamente quadrada */
+  border-radius: 50%;
+  /* Torna a imagem circular */
+  outline: 3px solid var(--newbase-Blue);
+  /* Contorno externo adicional */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Sombra suave */
+  object-fit: cover;
+  /* Garante que a imagem fique bem ajustada ao círculo */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .team-card img.profile-photo:hover {
-  transform: scale(1.2) translateY(-8px); /* Aumenta ligeiramente a imagem no hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
-  outline-color: var(--newbase-yellow); /* Muda a cor do contorno principal */
+  transform: scale(1.2) translateY(-8px);
+  /* Aumenta ligeiramente a imagem no hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  /* Sombra mais intensa no hover */
+  outline-color: var(--newbase-yellow);
+  /* Muda a cor do contorno principal */
 }
 
 .team-card h3 {
@@ -869,13 +958,14 @@ p:not(.more-info) {
   margin-bottom: 0.5rem;
 }
 
-.team-card{
+.team-card {
   font-size: 1.6rem;
 }
 
 .team-card p {
   margin-bottom: 0.5rem;
 }
+
 .team-card .social-links {
   display: flex;
   gap: 1rem;
@@ -897,6 +987,7 @@ p:not(.more-info) {
 .team-card .social-links a:hover {
   color: var(--body-color);
 }
+
 .team-card .button {
   margin-top: 1rem;
 }
@@ -922,11 +1013,16 @@ p:not(.more-info) {
 }
 
 .modal-photo {
-  width: clamp(100px, 20vw, 150px); /* Responsivo com largura mínima de 100px e máxima de 150px */
-  height: clamp(100px, 20vw, 150px); /* Mantém a imagem perfeitamente quadrada */
-  border-radius: 50%; /* Torna a imagem circular */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra suave */
-  object-fit: cover; /* Garante que a imagem fique bem ajustada ao círculo */
+  width: clamp(100px, 20vw, 150px);
+  /* Responsivo com largura mínima de 100px e máxima de 150px */
+  height: clamp(100px, 20vw, 150px);
+  /* Mantém a imagem perfeitamente quadrada */
+  border-radius: 50%;
+  /* Torna a imagem circular */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Sombra suave */
+  object-fit: cover;
+  /* Garante que a imagem fique bem ajustada ao círculo */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
@@ -943,32 +1039,118 @@ p:not(.more-info) {
 }
 
 
-/*====  CONTACT ============================ */
-#contact .grid {
-  gap: 4rem;
+/*==== CONTACT ============================ */
+#contact {
+  background-color: var(--body-color);
+  padding: 4rem 0;
+  position: relative; /* Necessário para que os grafismos se posicionem em relação a essa seção */
+  overflow: hidden; /* Garante que nada "vaze" para fora da seção */
 }
 
-#contact .text p {
-  margin-bottom: 2rem;
-}
-
-#contact .button i,
-#contact ul li i {
-  font-size: 1.5rem;
-  margin-right: 0.625rem;
-}
-
-#contact ul.grid {
+#contact .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-}
-
-#contact ul li {
-  display: flex;
   align-items: center;
 }
 
-#contact ul li i {
+#contact .text {
+  text-align: center;
+}
+
+#contact .title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
   color: var(--newbase-Blue);
+}
+
+#contact p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+#contact .button {
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+#contact .button i {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#contact .button:hover {
+  background-color: var(--newbase-yellow);
+}
+
+#contact .form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+#contact .form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--title-color);
+  text-align: center;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact .form-group {
+  margin-bottom: 1rem;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--newbase-blue);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+#contact .form-group input::placeholder,
+#contact .form-group textarea::placeholder {
+  color: var(--text-color);
+}
+
+#contact .form-group input:focus,
+#contact .form-group textarea:focus {
+  border-color: var(--newbase-yellow);
+  outline: none;
+}
+
+#contact .button {
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#contact .button:hover {
+  background-color: var(--newbase-yellow);
 }
 
 /*====  FOOTER ============================ */
@@ -1054,16 +1236,25 @@ footer {
 
 
 footer img {
-  max-width: 100%; /* Limita a largura da imagem ao tamanho do container */
-  height: auto; /* Mantém a proporção da imagem */
-  display: block; /* Evita espaçamentos adicionais ao redor da imagem */
-  margin: 0 auto; /* Centraliza a imagem */
+  max-width: 100%;
+  /* Limita a largura da imagem ao tamanho do container */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  display: block;
+  /* Evita espaçamentos adicionais ao redor da imagem */
+  margin: 0 auto;
+  /* Centraliza a imagem */
 }
+
 footer .brand img {
-  max-width: 120px; /* Define o tamanho máximo da imagem */
-  width: 100%; /* Torna a largura responsiva */
-  height: auto; /* Mantém a proporção da imagem */
-  margin: 0 auto 1rem; /* Centraliza a imagem */
+  max-width: 120px;
+  /* Define o tamanho máximo da imagem */
+  width: 100%;
+  /* Torna a largura responsiva */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  margin: 0 auto 1rem;
+  /* Centraliza a imagem */
 }
 
 .footer-column h3 {
@@ -1083,7 +1274,8 @@ footer .brand img {
 footer .brand {
   text-align: center;
   margin-bottom: 1rem;
-  padding: 1rem; /* Adiciona espaçamento interno */
+  padding: 1rem;
+  /* Adiciona espaçamento interno */
 }
 
 footer .brand p {
@@ -1189,7 +1381,7 @@ footer .social a:hover {
   transform: translateY(100%);
 }
 
-.back-to-top:hover{
+.back-to-top:hover {
   background: var(--newbase-yellow);
 }
 
@@ -1203,6 +1395,7 @@ footer .social a:hover {
 
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
+
   /* reusable classes */
   .container {
     max-width: 1120px;
@@ -1221,7 +1414,7 @@ footer .social a:hover {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .button {
     height: 3.125rem;
   }
@@ -1314,10 +1507,19 @@ footer .social a:hover {
     --title-font-size: 2.5rem;
     --subtitle-font-size: 1.25rem;
   }
+
   .card .title {
-    font-size: 2rem; /* Ajuste para telas médias */
+    font-size: 2rem;
+    /* Ajuste para telas médias */
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #home .main-title {
+    font-size: 3rem;
   }
 }
+
 /* large devices: 992 > */
 /* Para dispositivos com largura mínima de 992px */
 @media (min-width: 992px) {
@@ -1326,6 +1528,7 @@ footer .social a:hover {
     --subtitle-font-size: 1.125rem;
   }
 }
+
 /* medium devices: 767 > */
 /* Para dispositivos com largura mínima de 767px */
 @media (min-width: 767px) {
@@ -1333,56 +1536,204 @@ footer .social a:hover {
     --title-font-size: 1.75rem;
     --subtitle-font-size: 1.125rem;
   }
-  
+
   .card .title {
-      font-size: clamp(0.875rem, 2vw, 1.25rem); /* Ajuste para telas pequenas */
-    }
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    /* Ajuste para telas pequenas */
   }
 
-  footer .container {
-    grid-template-columns: repeat(4, 1fr);
-    text-align: left;
-    gap: 1.5rem;
+  #services h2.title {
+    text-align: center;
   }
 
-  .footer-column {
-    text-align: left;
+  #services p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
   }
 
-  .social-links {
-    justify-content: flex-start;
+  #team h2.title {
+    text-align: center;
   }
 
-  footer .brand img {
-    max-width: 100px; /* Reduz o tamanho da imagem para telas menores */
+  #team p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
   }
 
-  footer .brand {
-    margin-bottom: 1rem;
+}
+
+#home .main-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #000;
+}
+
+#home .description {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+footer .container {
+  grid-template-columns: repeat(4, 1fr);
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.footer-column {
+  text-align: left;
+}
+
+.social-links {
+  justify-content: flex-start;
+}
+
+footer .brand img {
+  max-width: 100px;
+  /* Reduz o tamanho da imagem para telas menores */
+}
+
+footer .brand {
+  margin-bottom: 1rem;
+}
+
+footer .brand p {
+  margin-bottom: 0.5rem;
+}
+
+footer .social {
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-auto-flow: row;
+  gap: 1rem;
+}
+
+footer .social a {
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  #home .description {
+    font-size: 1rem;
+    text-align: center;
   }
 
-  footer .brand p {
-    margin-bottom: 0.5rem;
+  /* Section Services */
+  #services .container.grid.cards {
+    grid-template-columns: 1fr;
+    /* Empilha os cards verticalmente */
   }
 
-  footer .social {
-    justify-content: center;
-    flex-wrap: wrap;
-    grid-auto-flow: row;
-    gap: 1rem;
+  #services .card {
+    width: 100%;
+    /* O card ocupa 100% da largura do container */
   }
 
-  footer .social a {
-    margin: 0 auto;
-    display: inline-flex;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
+  /* Section Team */
+  #team .team-container {
+    grid-template-columns: 1fr;
+    /* Empilha os cards verticalmente */
   }
-  @media (max-width: 480px) {
-    .card .title {
-      font-size: clamp(0.75rem, 3vw, 1rem); /* Ajuste para telas muito pequenas */
-    }
+
+  #team .team-card {
+    width: 100%;
+    /* O card ocupa 100% da largura do container */
   }
+
+}
+
+#home .button-primary {
+  display: flow-root;
+  background-color: var(--newbase-blue);
+  color: var(--text-color-light);
+  padding: 1rem 2rem;
+  inline-size: auto;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+#home .button-primary:hover {
+  background-color: var(--newbase-yellow);
+  color: var(--text-color-light);
+}
+
+@media (max-width: 767px) {
+  #home .container {
+    grid-template-columns: 1fr;
+    /* Empilha o texto e a imagem */
+    text-align: center;
+  }
+
+  #home .button-primary {
+    width: 100%;
+    /* O botão ocupa a largura total em telas pequenas */
+    text-align: center;
+  }
+
+  #location .container {
+    grid-template-columns: 1fr;
+    /* Empilha o texto e o mapa */
+  }
+
+  #location .text {
+    text-align: center;
+  }
+
+  #location .button-primary {
+    width: 100%;
+    /* O botão ocupa a largura total em telas pequenas */
+  }
+
+  #services h2.title {
+    text-align: center;
+  }
+
+  #services p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
+  }
+
+  #team h2.title {
+    text-align: center;
+  }
+
+  #team p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card .title {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    /* Ajuste para telas muito pequenas */
+  }
+
+  #services h2.title {
+    text-align: center;
+  }
+
+  #services p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
+  }
+
+  #team h2.title {
+    text-align: center;
+  }
+
+  #team p {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    text-align: center;
+  }
+}
 }
