@@ -454,15 +454,15 @@ nav.show div.icon-close {
   display: block;
 }
 
+/* ===== Correções para o alinhamento dos bullets ===== */
 .carousel-indicators {
   list-style: none;
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: 2%;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  right: 0;
   text-align: center;
   z-index: 10;
 }
@@ -484,9 +484,10 @@ nav.show div.icon-close {
   color: var(--newbase-pink);
 }
 
-#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+#carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet {
   color: var(--newbase-yellow);
 }
 
@@ -1645,7 +1646,32 @@ footer .social a {
     width: 100%;
     /* O card ocupa 100% da largura do container */
   }
+  .carousel-caption {
+    bottom: 5%; /* Ajuste a posição do texto para mais baixo em telas pequenas */
+    padding: 1.5rem 1rem;
+  }
 
+  .carousel-caption h2 {
+    font-size: 1.5rem; /* Tamanho menor para o título */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Tamanho menor para o parágrafo */
+  }
+
+  .carousel-caption .button {
+    padding: 0.75rem 1.5rem; /* Menor espaçamento no botão */
+    font-size: 0.875rem;
+  }
+
+  .carousel-indicators {
+    bottom: 1rem; /* Posiciona os bullets mais próximos do rodapé */
+  }
+
+  .carousel-bullet {
+    font-size: 1.5rem; /* Tamanho menor para os bullets */
+    padding: 0 5px; /* Reduz o espaçamento horizontal */
+  }
 }
 
 #home .button-primary {
@@ -1677,6 +1703,33 @@ footer .social a {
     width: 100%;
     /* O botão ocupa a largura total em telas pequenas */
     text-align: center;
+  }
+
+  .carousel-caption {
+    bottom: 5%; /* Ajuste a posição do texto para mais baixo em telas pequenas */
+    padding: 1.5rem 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5rem; /* Tamanho menor para o título */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Tamanho menor para o parágrafo */
+  }
+
+  .carousel-caption .button {
+    padding: 0.75rem 1.5rem; /* Menor espaçamento no botão */
+    font-size: 0.875rem;
+  }
+
+  .carousel-indicators {
+    bottom: 1rem; /* Posiciona os bullets mais próximos do rodapé */
+  }
+
+  .carousel-bullet {
+    font-size: 1.5rem; /* Tamanho menor para os bullets */
+    padding: 0 5px; /* Reduz o espaçamento horizontal */
   }
 
   #location .container {
@@ -1712,7 +1765,85 @@ footer .social a {
   }
 }
 
+/* ===== Correções para o posicionamento do h2 e p na carousel-caption ===== */
+@media (max-width: 568px) {
+  .carousel-caption {
+    bottom: 5%; /* Move a legenda mais para baixo em dispositivos menores */
+    padding: 1.5rem 1rem; /* Reduz o espaçamento interno */
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.25rem; /* Reduz o tamanho do texto do título */
+    margin-bottom: 0.5rem; /* Ajusta o espaçamento inferior */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Reduz o tamanho do texto do parágrafo */
+    margin-bottom: 1rem; /* Ajusta o espaçamento inferior */
+  }
+
+  .carousel-caption .button {
+    padding: 0.75rem 1.25rem; /* Reduz o espaçamento do botão */
+    font-size: 0.875rem; /* Ajusta o tamanho do texto do botão */
+  }
+}
+
+/* ===== Correções para o posicionamento do h2 e p na carousel-caption para telas menores que 486px ===== */
+@media (max-width: 486px) {
+  .carousel-caption {
+    bottom: 3%; /* Move a legenda mais para baixo em dispositivos menores */
+    padding: 1rem 0.5rem; /* Reduz o espaçamento interno */
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.125rem; /* Reduz o tamanho do texto do título */
+    margin-bottom: 0.5rem; /* Ajusta o espaçamento inferior */
+    line-height: 1.3; /* Garante melhor legibilidade */
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem; /* Reduz o tamanho do texto do parágrafo */
+    margin-bottom: 0.75rem; /* Ajusta o espaçamento inferior */
+    line-height: 1.4; /* Melhora a legibilidade */
+  }
+
+  .carousel-caption .button {
+    padding: 0.5rem 1rem; /* Reduz o espaçamento do botão */
+    font-size: 0.75rem; /* Ajusta o tamanho do texto do botão */
+    border-radius: 0.25rem; /* Deixa o botão mais compacto */
+  }
+}
+
+
 @media (max-width: 480px) {
+
+  .carousel-caption {
+    bottom: 5%; /* Ajuste a posição do texto para mais baixo em telas pequenas */
+    padding: rem 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5rem; /* Tamanho menor para o título */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Tamanho menor para o parágrafo */
+  }
+
+  .carousel-caption .button {
+    padding: 0.75rem 1.5rem; /* Menor espaçamento no botão */
+    font-size: 0.875rem;
+  }
+
+  .carousel-indicators {
+    bottom: 1rem; /* Posiciona os bullets mais próximos do rodapé */
+  }
+
+  .carousel-bullet {
+    font-size: 1.5rem; /* Tamanho menor para os bullets */
+    padding: 0 5px; /* Reduz o espaçamento horizontal */
+  }
+
   .card .title {
     font-size: clamp(0.75rem, 3vw, 1rem);
     /* Ajuste para telas muito pequenas */
@@ -1735,5 +1866,80 @@ footer .social a {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     text-align: center;
   }
+  /* ===== Correções para o posicionamento do h2 e p na carousel-caption para iPhones de 12 a 16 ===== */
+@media (max-width: 430px) {
+  .carousel-caption {
+    bottom: 5%; /* Move a legenda para mais abaixo */
+    padding: 1.5rem 1rem; /* Ajusta o espaço interno */
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.25rem; /* Ajusta o tamanho da fonte do título */
+    margin-bottom: 0.75rem; /* Ajusta o espaço inferior do título */
+    line-height: 1.3; /* Garante melhor legibilidade */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Reduz o tamanho do texto do parágrafo */
+    margin-bottom: 1rem; /* Ajusta o espaço inferior */
+    line-height: 1.4; /* Melhora a legibilidade */
+  }
+
+  .carousel-caption .button {
+    padding: 0.75rem 1.25rem; /* Ajusta o tamanho do botão */
+    font-size: 0.875rem; /* Ajusta o tamanho do texto do botão */
+    border-radius: 0.25rem; /* Deixa o botão mais compacto */
+  }
 }
+
+@media (max-width: 390px) {
+  .carousel-caption {
+    bottom: 3%; /* Move a legenda mais para baixo */
+    padding: 1.25rem 0.75rem; /* Reduz ainda mais o espaçamento interno */
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.125rem; /* Diminui o tamanho do título para telas ainda menores */
+    margin-bottom: 0.5rem; /* Ajusta o espaçamento inferior */
+    line-height: 1.25; /* Reduz o espaçamento das linhas */
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte do parágrafo */
+    margin-bottom: 0.75rem; /* Ajusta o espaço inferior */
+    line-height: 1.3; /* Melhora a legibilidade */
+  }
+
+  .carousel-caption .button {
+    padding: 0.5rem 1rem; /* Diminui o espaçamento do botão */
+    font-size: 0.75rem; /* Reduz o tamanho do texto do botão */
+    border-radius: 0.25rem; /* Mantém o botão compacto */
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel-caption {
+    bottom: 2%; /* Move a legenda ainda mais para baixo */
+    padding: 1rem 0.5rem; /* Reduz o espaço interno */
+  }
+
+  .carousel-caption h2 {
+    font-size: 1rem; /* Diminui ainda mais o tamanho do título */
+    margin-bottom: 0.5rem; /* Ajusta o espaço inferior */
+    line-height: 1.25; /* Garante que o título se ajuste ao espaço */
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem; /* Mantém o tamanho do parágrafo reduzido */
+    margin-bottom: 0.5rem; /* Ajusta o espaço inferior */
+    line-height: 1.3; /* Melhora a legibilidade */
+  }
+
+  .carousel-caption .button {
+    padding: 0.5rem 0.75rem; /* Reduz o espaçamento interno do botão */
+    font-size: 0.75rem; /* Ajusta o tamanho do texto do botão */
+    border-radius: 0.25rem; /* Deixa o botão mais compacto */
+  }
+}
+
 }
