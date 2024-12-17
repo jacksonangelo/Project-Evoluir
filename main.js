@@ -77,13 +77,32 @@ const psychologists = [
     id: 1,
     name: 'Jarbas Garcia',
     photo: './assets/team/2.png',
-    details: 'Pós-graduação em Intervenção ABA para Autismo e Deficiência Intelectual pelo Centro Universitário Celso Lisboa (2021). Atualmente é mestrando em Psicopatologias do Desenvolvimento da Criança e do Adolescente na Universidade de Lisboa, curso iniciado em 2023. Desde 2024, atua como diretor clínico no Centro de Desenvolvimento Infantil Evoluir. Foi professor das disciplinas de Estratégias e Técnicas para Inclusão Escolar e Elaboração de Programa de Ensino Individualizado no curso de pós-graduação em Análise do Comportamento Aplicada (ABA) ao Autismo, promovido pelo Centro de Educação Superior Continuada. Desde 2015, tem experiência profissional na implementação de estratégias comportamentais voltadas para pessoas com diagnóstico de Transtorno do Espectro do Autismo, incluindo atuação internacional em intervenção ABA em Portugal.'
+    details: `
+      <p><strong>Pós-graduação:</strong> Intervenção ABA para Autismo e Deficiência Intelectual pelo Centro Universitário Celso Lisboa (2021).</p>
+      <p><strong>Atualmente:</strong> Mestrando em Psicopatologias do Desenvolvimento da Criança e do Adolescente na Universidade de Lisboa (2023).</p>
+      <p><strong>Atuação:</strong> Diretor Clínico no Centro de Desenvolvimento Infantil Evoluir desde 2024.</p>
+      <p><strong>Experiência:</strong> Implementação de estratégias comportamentais para pessoas com TEA desde 2015, incluindo atuação internacional em intervenção ABA em Portugal.</p>
+      <p><strong>Docência:</strong> Foi professor em Estratégias e Técnicas para Inclusão Escolar e Elaboração de Programa de Ensino Individualizado no curso de pós-graduação em Análise do Comportamento Aplicada ao Autismo.</p>
+    `
   },
   {
     id: 2,
-    name: 'Juliana',
+    name: 'Juliana Fidelis',
     photo: './assets/team/1.png',
-    details: '⁠Pós graduada em Análise do comportamento Aplicada ao Autismo e deficiência intelectual pelo CBI of Miami. Especialista em psicologia infantil: Psicopedagoga, Pós-graduada em Análise do Comportamento Aplicada ao Autismo e Deficiência Intelectual pelo CBI of Miami, Especialistade em intervenção precoce (primeira infância), Supervisora clínica, Formação em orientação parental pelo PDA/EUA , Formação nas Avaliações: VB-MAPP, ABLLs e Socially Savvy, Participação em congressos e eventos de atualização voltados para autismo.'
+    details: `
+      <p><strong>Formação:</strong> Psicóloga educacional e clínica pela UEMG (2014), com foco no desenvolvimento infantil.</p>
+      <p><strong>Experiência:</strong> Desde 2008, atua no atendimento a crianças atípicas, incluindo crianças com Perturbação do Espectro do Autismo (PEA) e outras perturbações do desenvolvimento.</p>
+      <p><strong>Pós-graduações:</strong> 
+        <ul>
+          <li>Análise do Comportamento Aplicada ao Autismo e Deficiência Intelectual pelo CBI of Miami.</li>
+          <li>Especialização em Psicologia Infantil (2016).</li>
+          <li>Especialista em Intervenção Precoce (Primeira Infância), aplicando protocolos para crianças com ou sem diagnóstico médico.</li>
+        </ul>
+      </p>
+      <p><strong>Supervisão Clínica:</strong> Especialista em supervisão clínica, com formação em avaliação e elaboração de planos de intervenção individualizados utilizando protocolos como VB-MAPP, ABLLs e Socially Savvy.</p>
+      <p><strong>Orientação Parental:</strong> Formada pelo PDA (EUA) desde 2020, capacitando famílias atípicas para promover o desenvolvimento de crianças com Autismo, Síndrome de Down e outras condições.</p>
+      <p><strong>Participação em Congressos:</strong> Participação constante em eventos de atualização sobre o autismo e outras perturbações, com o objetivo de se manter atualizada e garantir a qualidade no atendimento.</p>
+    `
   }
 ];
 
@@ -93,7 +112,7 @@ teamCards.forEach(button => {
     const psychologist = psychologists.find(p => p.id === id);
     if (psychologist) {
       modalName.textContent = psychologist.name;
-      modalDetails.textContent = psychologist.details;
+      modalDetails.innerHTML = psychologist.details;
       modalPhoto.src = psychologist.photo;
       modal.style.display = 'block';
     }
@@ -170,6 +189,48 @@ galleryModal.addEventListener('click', (e) => {
   if (!e.target.closest('.control')) {
     galleryModal.classList.remove('active');
   }
+});
+
+/* Modal Services */
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".more-info-btn");
+  const modal = document.createElement("div");
+  modal.classList.add("service-modal");
+  modal.innerHTML = `
+    <div class="service-modal-content">
+      <span class="service-close-btn">&times;</span>
+      <div class="service-modal-text"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const modalContent = modal.querySelector(".service-modal-text");
+  const closeModal = modal.querySelector(".service-close-btn");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      // Verifica a largura da tela e o texto do botão
+      if (window.innerWidth > 768 && e.target.textContent.trim() === "Ver Menos") {
+        const card = e.target.closest(".card");
+        const info = card.querySelector(".more-info").innerHTML;
+
+        modalContent.innerHTML = info;
+        modal.style.display = "block";
+      }
+    });
+  });
+
+  // Fechar modal ao clicar no botão de fechar
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Fechar modal ao clicar fora do conteúdo
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });
 
 
