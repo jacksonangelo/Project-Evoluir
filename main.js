@@ -199,23 +199,49 @@ document.addEventListener("DOMContentLoaded", function () {
   modal.innerHTML = `
     <div class="service-modal-content">
       <span class="service-close-btn">&times;</span>
+      <img src="" alt="Imagem do Serviço" class="service-modal-image">
+      <h3 class="service-modal-title"></h3>
       <div class="service-modal-text"></div>
     </div>
   `;
   document.body.appendChild(modal);
 
-  const modalContent = modal.querySelector(".service-modal-text");
+  const modalContent = modal.querySelector(".service-modal-content");
+  const modalImage = modal.querySelector(".service-modal-image");
+  const modalTitle = modal.querySelector(".service-modal-title");
+  const modalText = modal.querySelector(".service-modal-text");
   const closeModal = modal.querySelector(".service-close-btn");
 
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      // Verifica a largura da tela e o texto do botão
       if (window.innerWidth > 768 && e.target.textContent.trim() === "Ver Menos") {
         const card = e.target.closest(".card");
         const info = card.querySelector(".more-info").innerHTML;
 
-        modalContent.innerHTML = info;
-        modal.style.display = "block";
+        // Obter a cor de fundo e texto
+        const bgColor = getComputedStyle(card).getPropertyValue(card.getAttribute("data-bg-color"));
+        const imageSrc = card.querySelector('img').getAttribute('src');
+        const titleText = card.querySelector('.title').textContent;
+
+        // Aplicar informações no modal
+        modalText.innerHTML = info;
+        modalImage.src = imageSrc;
+        modalTitle.textContent = titleText;
+
+        // Aplicar cor de fundo no service-modal-content
+        modalContent.style.backgroundColor = bgColor;
+        modal.style.display = "flex";
+        modalContent.style.color = "#000"; // Texto preto para garantir legibilidade
+
+        // Fecha o card e muda o botão para "Ver Mais"
+        card.classList.remove("active");
+        card.style.backgroundColor = ""; // Voltar ao fundo padrão
+        card.style.color = ""; // Voltar ao texto padrão
+        card.querySelector(".more-info").style.display = "none";
+        button.textContent = "Ver Mais";
+
+        // Adicionar a classe que escurece o fundo do site
+        document.body.classList.add('modal-active');
       }
     });
   });
@@ -223,12 +249,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fechar modal ao clicar no botão de fechar
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    document.body.classList.remove('modal-active'); // Remove a classe de opacidade no fundo
   });
 
   // Fechar modal ao clicar fora do conteúdo
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
+      document.body.classList.remove('modal-active'); // Remove a classe de opacidade no fundo
     }
   });
 });
@@ -327,6 +355,21 @@ function activateMenuAtCurrentSection() {
     }
   }
 }
+// Auto-slide do carrossel
+let currentSlide = 1;
+const totalSlides = document.querySelectorAll('.carousel-open').length; // Total de slides no carrossel
+const changeSlideInterval = 5000; // Tempo entre cada slide (5000ms = 5 segundos)
+
+function changeSlide() {
+  currentSlide++;
+  if (currentSlide > totalSlides) {
+    currentSlide = 1; // Reinicia no primeiro slide
+  }
+  document.getElementById(`carousel-${currentSlide}`).checked = true; // Marca o próximo slide
+}
+
+// Inicia a troca automática de slides
+setInterval(changeSlide, changeSlideInterval);
 
 /* When Scroll */
 window.addEventListener('scroll', function () {

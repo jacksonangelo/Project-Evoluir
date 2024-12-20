@@ -18,6 +18,23 @@ img {
   height: auto;
 }
 
+/* === Importação das Fontes === */
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/Fontes/FuturaStd-Bold.woff') format('opentype');
+  font-weight: 700;
+  /* Negrito */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./assets/Fontes/NunitoSans-Bold.woff') format('truetype');
+  font-weight: 700;
+  /* Negrito */
+  font-style: normal;
+}
+
 /*====  VARIABLES ============================ */
 :root {
   --header-height: 4.5rem;
@@ -54,6 +71,9 @@ img {
 
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
+
+  --main-font: 'Futura', sans-serif;
+  --support-font: 'Nunito Sans', sans-serif;
 }
 
 /*===  BASE ============================ */
@@ -213,6 +233,7 @@ nav {
 }
 
 nav .title {
+  font-family: var(--main-font);
   color: #e4e4e4;
   font-weight: bold;
 }
@@ -373,17 +394,20 @@ nav.show div.icon-close {
 }
 
 .carousel-caption h2 {
+  font-family: var(--main-font);
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .carousel-caption p {
+  font-family: var(--support-font);
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .carousel-caption .button {
+  font-family: var(--support-font);
   background-color: var(--newbase-blue);
   color: var(--text-color-light);
   padding: 1rem 2rem;
@@ -523,9 +547,20 @@ nav.show div.icon-close {
   /* Garante que a imagem se ajuste ao espaço */
 }
 
+#home h1 {
+  color: #000;
+  font-family: var(--main-font);
+}
+
+#home p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--support-font);
+}
+
 #home .text {
   max-width: 600px;
-  text-align: left;
+  text-align: center;
 }
 
 #home .text-content {
@@ -546,6 +581,7 @@ nav.show div.icon-close {
 
 /* Correção do botão da section Home */
 #home .button-primary {
+  font-family: var(--support-font);
   display: flow-root;
   background-color: var(--newbase-blue);
   color: var(--text-color-light);
@@ -605,6 +641,9 @@ nav.show div.icon-close {
 #about .image::before {
   border-radius: 0.25rem;
 }
+#about h2{
+  font-family: var(--main-font);
+}
 
 #about .text {
   margin-left: 1.5rem;
@@ -651,8 +690,9 @@ nav.show div.icon-close {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .card .more-info .info-black {
-color: #000;
+  color: #000;
 }
 
 .card .title {
@@ -720,6 +760,14 @@ p:not(.more-info) {
   align-items: center;
 }
 
+#services h2.title {
+  font-family: var(--main-font);
+}
+
+#services p {
+  font-family: var(--support-font);
+}
+
 #services header {
   text-align: center;
   max-width: 1200px;
@@ -747,8 +795,25 @@ p:not(.more-info) {
   /* Impede que o card ultrapasse o limite da grade */
 }
 
+/* Efeito de fundo esmaecido quando o modal está ativo */
+body.modal-active {
+  overflow: hidden;
+  /* Evita a rolagem da página */
+}
 
-  /* Modal services */
+body.modal-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  /* Colocar abaixo do modal */
+}
+
+/* Modal services */
 .service-modal {
   display: none;
   position: fixed;
@@ -765,9 +830,11 @@ p:not(.more-info) {
 .service-modal-content {
   background-color: #fff;
   border-radius: 10px;
-  padding: 20px;
-  max-width: 500px;
-  margin: 10% auto;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
   text-align: center;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -775,19 +842,33 @@ p:not(.more-info) {
 
 .service-close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-modal-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  /* Aumentar o tamanho do texto */
   color: #333;
-  line-height: 1.6;
+  /* Cor padrão */
+  line-height: 1.8;
+  text-align: left;
+  padding: 20px 0;
 }
 
-/* ==== GALERIA Section ==== */
+
+/* === GALERIA SECTION - INÍCIO === */
 #gallery {
   background-color: var(--body-color);
   padding: 4rem 0;
@@ -799,12 +880,14 @@ p:not(.more-info) {
 }
 
 #gallery header h2.title {
+  font-family: var(--main-font);
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 #gallery header p {
+  font-family: var(--support-font);
   text-align: center;
   font-size: 1.125rem;
   margin-bottom: 2rem;
@@ -827,7 +910,6 @@ p:not(.more-info) {
 .gallery-item img {
   width: 100%;
   height: 200px;
-  /* Tamanho padronizado de todas as imagens */
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -1002,8 +1084,12 @@ p:not(.more-info) {
   outline-color: var(--newbase-yellow);
   /* Muda a cor do contorno principal */
 }
+#team h2.title {
+  font-family: var(--main-font);
+}
 
 .team-card h3 {
+  font-family: var(--main-font);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -1012,8 +1098,14 @@ p:not(.more-info) {
   font-size: 1.6rem;
 }
 
-.team-card p {
+#team .team-card p {
+  font-family: var(--support-font);
   margin-bottom: 0.5rem;
+}
+
+.team-card span {
+  font-family: var(--support-font);
+  color: var(--newbase-blue);
 }
 
 .team-card .social-links {
@@ -1109,19 +1201,23 @@ p:not(.more-info) {
 .modal-content strong {
   color: var(--newbase-blue);
 }
+
 /* Estilo personalizado para o conteúdo de detalhes no modal */
 .modal-content {
-  max-width: 90%; /* Reduz a largura máxima do modal para telas pequenas */
+  max-width: 90%;
+  /* Reduz a largura máxima do modal para telas pequenas */
   width: 100%;
   height: auto;
-  max-height: 90vh; /* Para evitar o overflow do modal na tela */
-  overflow-y: auto; /* Adiciona o scroll interno se o conteúdo for muito grande */
+  max-height: 90vh;
+  /* Para evitar o overflow do modal na tela */
+  overflow-y: auto;
+  /* Adiciona o scroll interno se o conteúdo for muito grande */
 }
 
-.modal-content p, 
-.modal-content ul, 
+.modal-content p,
+.modal-content ul,
 .modal-content li {
-  font-size: 1rem; 
+  font-size: 1rem;
   margin-bottom: 0.75rem;
   line-height: 1.6;
   text-align: left;
@@ -1555,11 +1651,12 @@ footer .social a:hover {
   }
 
   nav .menu ul li a.title {
-    font: 400 1rem var(--body-font);
+    font: 400 1rem var(--support-font);
     -webkit-font-smoothing: antialiased;
   }
 
   nav .menu ul li a.title.active {
+    font: var(--support-font);
     font-weight: bold;
     -webkit-font-smoothing: auto;
   }
@@ -1621,6 +1718,11 @@ footer .social a:hover {
   #contact .text {
     max-width: 25rem;
   }
+
+  /* Responsividade da Galeria */
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 /* large devices: 1023 > */
@@ -1640,9 +1742,26 @@ footer .social a:hover {
 
   #home .main-title {
     font-size: 3rem;
+    color: #000;
+  }
+}
+@media (max-width: 1199px) and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
+@media (max-width: 767px) and (min-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
 /* large devices: 992 > */
 /* Para dispositivos com largura mínima de 992px */
 @media (min-width: 992px) {
@@ -1664,6 +1783,7 @@ footer .social a:hover {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     /* Ajuste para telas pequenas */
   }
+
   /* Ajustes Services mobile*/
   #services h3.title {
     font-size: 1.3rem;
@@ -1684,62 +1804,61 @@ footer .social a:hover {
     text-align: center;
   }
 
-}
+  #home .main-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #000;
+  }
 
-#home .main-title {
-  font-size: 2rem;
-  text-align: center;
-  color: #000;
-}
+  #home .description {
+    font-size: 1.125rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
 
-#home .description {
-  font-size: 1.125rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
+  footer .container {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    gap: 1.5rem;
+  }
 
-footer .container {
-  grid-template-columns: repeat(4, 1fr);
-  text-align: left;
-  gap: 1.5rem;
-}
+  .footer-column {
+    text-align: left;
+  }
 
-.footer-column {
-  text-align: left;
-}
+  .social-links {
+    justify-content: flex-start;
+  }
 
-.social-links {
-  justify-content: flex-start;
-}
+  footer .brand img {
+    max-width: 100px;
+    /* Reduz o tamanho da imagem para telas menores */
+  }
 
-footer .brand img {
-  max-width: 100px;
-  /* Reduz o tamanho da imagem para telas menores */
-}
+  footer .brand {
+    margin-bottom: 1rem;
+  }
 
-footer .brand {
-  margin-bottom: 1rem;
-}
+  footer .brand p {
+    margin-bottom: 0.5rem;
+  }
 
-footer .brand p {
-  margin-bottom: 0.5rem;
-}
+  footer .social {
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-auto-flow: row;
+    gap: 1rem;
+  }
 
-footer .social {
-  justify-content: center;
-  flex-wrap: wrap;
-  grid-auto-flow: row;
-  gap: 1rem;
-}
-
-footer .social a {
-  margin: 0 auto;
-  display: inline-flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  font-size: 1.25rem;
+  footer .social a {
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1814,17 +1933,20 @@ footer .social a {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     text-align: center;
   }
-  
+
   /* Modal Team*/
   .modal-content {
-    max-width: 95%; /* Para telas pequenas, a largura será menor */
-    max-height: 80vh; /* Garante que o conteúdo não estoure a tela */
+    max-width: 95%;
+    /* Para telas pequenas, a largura será menor */
+    max-height: 80vh;
+    /* Garante que o conteúdo não estoure a tela */
   }
 
-  .modal-content p, 
-  .modal-content ul, 
+  .modal-content p,
+  .modal-content ul,
   .modal-content li {
-    font-size: 0.9rem; /* Reduz o tamanho do texto para telas menores */
+    font-size: 0.9rem;
+    /* Reduz o tamanho do texto para telas menores */
     line-height: 1.4;
   }
 
@@ -1835,6 +1957,11 @@ footer .social a {
 
   .modal-content h3#modal-name {
     font-size: 1.25rem;
+  }
+
+  /* Responsividade da Galeria */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1866,6 +1993,10 @@ footer .social a {
   #home .description {
     font-size: 1rem;
     text-align: center;
+  }
+  #home .main-title{
+    color: #000;
+    font-family: var(--main-font);
   }
 
   #home .button-primary {
@@ -1908,6 +2039,11 @@ footer .social a {
     /* Reduz o espaçamento horizontal */
   }
 
+  nav a.title{
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+  }
+  
   #location .container {
     grid-template-columns: 1fr;
     /* Empilha o texto e o mapa */
@@ -1940,6 +2076,11 @@ footer .social a {
   #team p {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     text-align: center;
+  }
+
+  /* Responsividade da Galeria */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1975,6 +2116,11 @@ footer .social a {
 
   .carousel-bullet {
     display: none;
+  }
+
+  nav a.title{
+    font-family: var(--main-font);
+    font-size: 1.5rem;
   }
 
   /* Ajustes Services mobile*/
@@ -2041,6 +2187,9 @@ footer .social a {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     text-align: center;
   }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -2091,6 +2240,11 @@ footer .social a {
     /* Ajuste para telas muito pequenas */
   }
 
+  nav a.title{
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+  }
+
   /* Ajustes Services mobile*/
   #services h3.title {
     font-size: 1.2rem;
@@ -2110,6 +2264,9 @@ footer .social a {
   #team p {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     text-align: center;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2153,6 +2310,11 @@ footer .social a {
 
   .carousel-bullet {
     display: none;
+  }
+
+  nav a.title{
+    font-family: var(--main-font);
+    font-size: 1.5rem;
   }
 
   /* Ajustes Services mobile*/
@@ -2219,6 +2381,10 @@ footer .social a {
     text-align: center;
   }
 
+  nav a.title{
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 360px) {
